@@ -23,6 +23,7 @@
                 <x-nav href="/" :active="request()->is('/')">Home</x-nav>
                 <x-nav href="/about" :active="request()->is('about')">About</x-nav>
                 <x-nav href="/contact" :active="request()->is('contact')" >Contact</x-nav>
+                <x-nav href="/jobs" :active="request()->is('jobs')" >Jobs</x-nav>
               </div>
             </div>
           </div>
