@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Friend_zone;
 use App\Models\Job;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
@@ -7,10 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-
-    $job = Job::all();
-    dd($job);
-    // return view('home');
+    return view('home');
 });
 Route::get('/about', function () {
     return view('about');
@@ -24,8 +22,15 @@ Route::get('/jobs', function () {
 ['jobs' => job::all()]);
 });
 
+Route::get('/friend_zone', function ()  {
+
+    return view('friend_zone',
+['Friend_zones' =>Friend_zone::all()]);
+});
+
 Route::get('/jobs/{id}', function ($id)  {
 
         $job = Job::find($id);
     return view('job', ['job' => $job]);
 });
+
